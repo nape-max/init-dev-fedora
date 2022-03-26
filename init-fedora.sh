@@ -13,7 +13,7 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf check-update && \
 sudo dnf install code
 
-sudo dnf -y install docker docker-compose chromium git xclip elixir erlang && \
+sudo dnf -y install docker docker-compose chromium git xclip elixir erlang zsh wget curl && \
 sudo dnf -y upgrade
 
 cp ./config ~/.config/i3/
@@ -28,3 +28,7 @@ git config --global user.name "$gitUsername"
 git config --global user.email "$gitEmail"
 
 ssh-keygen -t ed25519 -C "$gitEmail"
+
+sudo usermod -s $(which zsh) $USER
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
