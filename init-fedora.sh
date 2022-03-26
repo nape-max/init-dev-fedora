@@ -13,5 +13,16 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf check-update && \
 sudo dnf install code
 
-sudo dnf -y install docker docker-compose chromium git && \
+sudo dnf -y install docker docker-compose chromium git xclip && \
 sudo dnf -y upgrade
+
+echo "Please enter your git email:"
+read gitEmail
+
+echo "Please enter your git username:"
+read gitUsername
+
+git config --global user.name "$gitUsername"
+git config --global user.email "$gitEmail"
+
+ssh-keygen -t ed25519 -C "$gitEmail"
