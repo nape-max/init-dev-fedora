@@ -13,7 +13,7 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf check-update && \
 sudo dnf install code
 
-sudo dnf -y install docker docker-compose chromium git xclip && \
+sudo dnf -y install docker docker-compose chromium git xclip elixir erlang && \
 sudo dnf -y upgrade
 
 cp ./config ~/.config/i3/
