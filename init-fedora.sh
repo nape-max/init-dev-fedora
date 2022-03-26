@@ -16,6 +16,8 @@ sudo dnf install code
 sudo dnf -y install docker docker-compose chromium git xclip && \
 sudo dnf -y upgrade
 
+cp ./config ~/.config/i3/
+
 echo "Please enter your git email:"
 read gitEmail
 
